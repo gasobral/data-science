@@ -110,7 +110,7 @@ plt.annotate(
                pad=0.25)
 )
 
-plt.savefig('analise_prefeitos.png')
+plt.savefig('../Figures/analise_prefeitos.png')
 plt.clf()
 plt.close()
 
@@ -167,7 +167,7 @@ plt.annotate(
                pad=0.25)
 )
 
-plt.savefig('analise_vereadores.png')
+plt.savefig('../Figures/analise_vereadores.png')
 plt.clf()
 plt.close()
 
@@ -210,7 +210,7 @@ for line in range(0, correlation_table.shape[0]):
         weight='semibold'
     )
 
-plt.savefig('analise_correlacao.png')
+plt.savefig('../Figures/analise_correlacao.png')
 plt.clf()
 plt.close()
 
@@ -240,7 +240,7 @@ eixo.set_xlabel('Prefeitos')
 eixo.set_ylabel('Vereadores')
 eixo.set_zlabel('Candidatos')
 
-# plt.show()
+plt.savefig('../Figures/correlacao_prefeitos_vereadores.png')
 plt.clf()
 plt.close()
 

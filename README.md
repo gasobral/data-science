@@ -8,7 +8,7 @@ you will find a list of projects with their respective description.
 ## List of Projects
 
 ### Data Visualization
-#### Brazilian Elections
+* Brazilian Elections
 A simple data visualization project to show the number of mayors and
 councilors elected by party. And also, to show the correlation between
 these two numbers. In this project I used bar and scatter graphs to
