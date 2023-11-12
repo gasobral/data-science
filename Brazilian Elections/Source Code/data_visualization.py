@@ -20,84 +20,84 @@ plt.rcParams['figure.figsize'] = (15, 6)
 plt.style.use('ggplot')
 
 ## importing dataset
-base_dados = pd.read_csv('../Data Set/clean_data.csv')
+elections_data_set = pd.read_csv('../Data Set/clean_data.csv')
 
 ## basic dataset information
-print(f"Dimensional of imported dataset: {base_dados.shape}\n")
-print(f"First 5 lines of the dataset\n{base_dados.head()}\n")
-print(f"Dataset summary\n{base_dados.info()}\n")
+print(f"Dimensional of imported dataset: {elections_data_set.shape}\n")
+print(f"First 5 lines of the dataset\n{elections_data_set.head()}\n")
+print(f"Dataset summary\n{elections_data_set.info()}\n")
 print(f"Show the number of null data for each column\n"
-      f"{base_dados.isnull().sum()}\n")
+      f"{elections_data_set.isnull().sum()}\n")
 
 print(f"Showing the number of unique values for each column\n"
-      f"{base_dados.nunique()}")
+      f"{elections_data_set.nunique()}")
 
 ## removing column Unnamed: 0 since it is only a record count for
 ## each line of the dataset
-base_dados.drop(columns=['Unnamed: 0'], inplace=True)
+elections_data_set.drop(columns=['Unnamed: 0'], inplace=True)
 
 ## analyzing the data for mayors
-query_prefeitos = base_dados[
-    (base_dados['job'] == 'prefeito') &
-    (base_dados['elector_count'] == 's')
+query_mayors = elections_data_set[
+    (elections_data_set['job'] == 'prefeito') &
+    (elections_data_set['elector_count'] == 's')
 ]
 
-## analyzing the number of mayors elected by main party
-analise_01 = query_prefeitos.groupby(by=['main_party']).agg(
-    quantidade=('candidate_vote_count', 'count')
+## Analyzing the number of mayors elected by main party
+mayors_analysis = query_mayors.groupby(by=['main_party']).agg(
+    amount=('candidate_vote_count', 'count')
 )
 
-number_elected_mayors = analise_01['quantidade'].sum()
-analise_01['%'] = analise_01['quantidade'] / number_elected_mayors * 100
-analise_01['%'] = round(analise_01['%'], 2)
-analise_01.sort_values('quantidade', inplace=True, ascending=False)
+number_elected_mayors = mayors_analysis['amount'].sum()
+mayors_analysis['%'] = mayors_analysis['amount'] / number_elected_mayors * 100
+mayors_analysis['%'] = round(mayors_analysis['%'], 2)
+mayors_analysis.sort_values('amount', inplace=True, ascending=False)
 
-## plotting the graphic with the analyzes analise_01
+## plotting the graphic with the analyzes mayors_analysis
 ## creating a pallet of colors using seaborn
-paleta_cores = sns.color_palette('magma', len(analise_01))
+color_palette = sns.color_palette('magma', len(mayors_analysis))
 
 ## configuring the size of the graph
 plt.figure(figsize=(20,6))
 
 ## plotting the graph itself
-plt.bar(analise_01.index,
-        analise_01['quantidade'],
+plt.bar(mayors_analysis.index,
+        mayors_analysis['amount'],
         width=0.9,
-        color=paleta_cores)
+        color=color_palette)
 
 ## configuring the title
-plt.title('Prefeitos eleitos no país',
+plt.title('Mayors elected in Brazil',
           loc='left',
           fontsize=20,
           color='#404040',
           fontweight=600)
 
 ## configuring the labels
-plt.ylabel('Quantidade de prefeitos')
-plt.xlabel('Partidos')
+plt.ylabel('Amount of mayors')
+plt.xlabel('Parties')
 plt.xticks(rotation=90)
 
 ## changing y axis limit value to add some space after the
 ## maximum value
-plt.ylim(0, analise_01['quantidade'].max() * 1.1)
+plt.ylim(0, mayors_analysis['amount'].max() * 1.1)
 
 ## adding labels for each bar of the graph
-for posicao, valor in enumerate(analise_01['quantidade']):
+for position, value in enumerate(mayors_analysis['amount']):
     plt.text(
         ## position of the label
-        posicao -0.3,
-        valor +10,
+        position -0.3,
+        value +10,
         ## label text
-        valor,
+        value,
         ## label color
-        color=paleta_cores[posicao],
+        color=color_palette[position],
         ## label size and font
         size=12,
         fontweight=700
     )
 
 plt.annotate(
-    f'Eleitos Brasil: {analise_01["quantidade"].sum()}',
+    f'Elected in Brazil: {mayors_analysis["amount"].sum()}',
     xy=(0.99,0.94),
     xycoords='axes fraction',
     ha='right',
@@ -110,51 +110,51 @@ plt.annotate(
                pad=0.25)
 )
 
-plt.savefig('analise_prefeitos.png')
+plt.savefig('mayor_analysis.png')
 plt.clf()
 plt.close()
 
 ## analyzing data for councilors
-query_vereadores = base_dados[
-    (base_dados['job'] == 'vereador') &
-    (base_dados['elector_count'] == 's')
+query_councilors = elections_data_set[
+    (elections_data_set['job'] == 'vereador') &
+    (elections_data_set['elector_count'] == 's')
 ]
 
-analise_02 = query_vereadores.groupby(by='main_party').agg(
-    quantidade = ('candidate_vote_count', 'count')
+councilors_analysis = query_councilors.groupby(by='main_party').agg(
+    amount = ('candidate_vote_count', 'count')
 )
 
-number_elected_councilors = analise_02['quantidade'].sum()
-analise_02['%'] = analise_02['quantidade'] / number_elected_councilors * 100
-analise_02['%'] = round(analise_02['%'], 2)
-analise_02.sort_values('quantidade', inplace=True, ascending=False)
+number_elected_councilors = councilors_analysis['amount'].sum()
+councilors_analysis['%'] = councilors_analysis['amount'] / number_elected_councilors * 100
+councilors_analysis['%'] = round(councilors_analysis['%'], 2)
+councilors_analysis.sort_values('amount', inplace=True, ascending=False)
 
 plt.figure(figsize=(12,10))
 plt.hlines(
-    y=analise_02.index,
+    y=councilors_analysis.index,
     xmin=0,
-    xmax=analise_02['quantidade'],
+    xmax=councilors_analysis['amount'],
     lw=5,
-    color=paleta_cores,
+    color=color_palette,
     alpha=0.5
 )
 
 plt.scatter(
-    analise_02['quantidade'],
-    analise_02.index,
+    councilors_analysis['amount'],
+    councilors_analysis.index,
     s=100,
-    color=paleta_cores,
+    color=color_palette,
     alpha=0.8
 )
 
-plt.title('Vereadores eleitos no país',
+plt.title('Councilors Elected in Brazil',
           loc='left',
           fontsize=20,
           color='#404040',
           fontweight=500)
 
 plt.annotate(
-    f'Eleitos Brasil: {analise_02["quantidade"].sum()}',
+    f'Elected in Brazil: {councilors_analysis["amount"].sum()}',
     xy=(0.99,0.94),
     xycoords='axes fraction',
     ha='right',
@@ -167,24 +167,24 @@ plt.annotate(
                pad=0.25)
 )
 
-plt.savefig('analise_vereadores.png')
+plt.savefig('councilors_analysis.png')
 plt.clf()
 plt.close()
 
 ## correlation analysis
 ## checking if there is any relationship between the number of mayors
 ## and councilors elected by party
-correlation_table = analise_01['quantidade'].reset_index()
+correlation_table = mayors_analysis['amount'].reset_index()
 correlation_table = pd.merge(correlation_table,
-                             analise_02.reset_index(),
+                             councilors_analysis.reset_index(),
                              on=['main_party'],
                              how='inner')
-correlation_table.columns = ['Partido', 'Prefeitos', 'Vereadores', '%']
+correlation_table.columns = ['Party', 'Mayors', 'Councilors', '%']
 correlation_table.drop(columns=['%'], inplace=True)
 
 sns.regplot(
-    x=correlation_table['Prefeitos'],
-    y=correlation_table['Vereadores'],
+    x=correlation_table['Mayors'],
+    y=correlation_table['Councilors'],
     ci=95,
     scatter_kws={
         'color': 'blue',
@@ -197,48 +197,48 @@ sns.regplot(
     }
 )
 
-plt.title('Prefeitos vs Vereadores eleitos')
+plt.title('Mayors vs Councilors elected')
 
 ## adding the party for mayors and councilors
 for line in range(0, correlation_table.shape[0]):
     plt.text(
-        correlation_table['Prefeitos'][line] + 0.8,
-        correlation_table['Vereadores'][line],
-        correlation_table['Partido'][line],
+        correlation_table['Mayors'][line] + 0.8,
+        correlation_table['Councilors'][line],
+        correlation_table['Party'][line],
         size='medium',
         color='gray',
         weight='semibold'
     )
 
-plt.savefig('analise_correlacao.png')
+plt.savefig('correlation_analysis.png')
 plt.clf()
 plt.close()
 
 ## retrieves the amount of candidate by party, elected or not
-candidate_party = base_dados.groupby(by=['main_party']).count().iloc[:,0:1].reset_index()
-candidate_party.columns = ['Partido', 'Candidatos']
+candidate_party = elections_data_set.groupby(by=['main_party']).count().iloc[:,0:1].reset_index()
+candidate_party.columns = ['Party', 'Candidates']
 
 correlation_table = pd.merge(correlation_table,
                              candidate_party,
-                             on=['Partido'],
+                             on=['Party'],
                              how='inner')
 print(correlation_table.head())
 
 figure = plt.figure(figsize=(15,8))
 eixo = figure.add_subplot(111, projection='3d')
 eixo.scatter(
-    correlation_table['Prefeitos'],
-    correlation_table['Vereadores'],
-    correlation_table['Candidatos'],
+    correlation_table['Mayors'],
+    correlation_table['Councilors'],
+    correlation_table['Candidates'],
     c='black',
     s=100
 )
 
 eixo.view_init(30, 185)
 
-eixo.set_xlabel('Prefeitos')
-eixo.set_ylabel('Vereadores')
-eixo.set_zlabel('Candidatos')
+eixo.set_xlabel('Mayors')
+eixo.set_ylabel('Councilors')
+eixo.set_zlabel('Candidates')
 
 # plt.show()
 plt.clf()
@@ -246,12 +246,12 @@ plt.close()
 
 figura = px.scatter_3d(
     correlation_table,
-    x='Prefeitos',
-    y='Vereadores',
-    z='Candidatos',
-    color='Partido',
+    x='Mayors',
+    y='Councilors',
+    z='Candidates',
+    color='Party',
     opacity=0.7,
-    symbol='Partido'
+    symbol='Party'
 )
 
 figura.show()
