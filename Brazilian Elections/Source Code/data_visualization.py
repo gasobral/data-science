@@ -110,7 +110,8 @@ plt.annotate(
                pad=0.25)
 )
 
-plt.savefig('mayor_analysis.png')
+
+plt.savefig('../Figures/mayor_analysis.png')
 plt.clf()
 plt.close()
 
@@ -167,7 +168,7 @@ plt.annotate(
                pad=0.25)
 )
 
-plt.savefig('councilors_analysis.png')
+plt.savefig('../Figures/councilors_analysis.png')
 plt.clf()
 plt.close()
 
@@ -210,7 +211,7 @@ for line in range(0, correlation_table.shape[0]):
         weight='semibold'
     )
 
-plt.savefig('correlation_analysis.png')
+plt.savefig('../Figures/correlation_analysis.png')
 plt.clf()
 plt.close()
 
@@ -240,7 +241,7 @@ eixo.set_xlabel('Mayors')
 eixo.set_ylabel('Councilors')
 eixo.set_zlabel('Candidates')
 
-# plt.show()
+plt.savefig('../Figures/correlation_mayors_councilors.png')
 plt.clf()
 plt.close()
 
