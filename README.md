@@ -10,7 +10,7 @@ diverse, allowing us to develop broad view of data. Below you can find a
 list of projects followed by their description.
 
 ## List of Projects
-* Brazilian Elections
+* [Brazilian Elections](https://github.com/gasobral/data-science/tree/main/Brazilian%20Elections)
 A simple data visualization project to show the number of mayors and
 councilors elected by party. And also, to show the correlation between
 these two numbers. In this project I used bar and scatter graphs to
