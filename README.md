@@ -1,6 +1,6 @@
 # Data Science
 
-## Project Description
+## Repository Description
 A collection of projects created in order to develop data science
 skills. We focus in building predictive models using *python*,
 *scikit-learn*, *pandas* and *numpy*. However, we also included (in some
@@ -10,14 +10,20 @@ diverse, allowing us to develop broad view of data. Below you can find a
 list of projects followed by their description.
 
 ## List of Projects
-* [Brazilian Elections](https://github.com/gasobral/data-science/tree/main/Brazilian%20Elections)
+### [Brazilian Elections](https://github.com/gasobral/data-science/tree/main/Brazilian%20Elections)
+Since election is an important topic, we decided to describe Brazilian
+election data from 2022. We obtained this data from Electoral Supreme
+Court and applied an exploratory data analysis to them. Univariate and
+multivariate analysis were done to investigate a relation between
+candidate votes, jobs (mayors and councilors only), state and other
+variables. By performing this exploratory data analysis we could
+provide some interesting data insights. For example, the job and state
+has a great influence in total candidate votes, however, in average,
+the job has much more influence than the state. Moreover, we showed a
+positive the correlation between the number of councilors and mayors
+elected.
 
-A simple data visualization project to show the number of mayors and
-councilors elected by party. And also, to show the correlation between
-these two numbers. In this project I used bar and scatter graphs to
-present the data.
-
-* Predicting Rental Price
+### Predicting Rental Price
 The idea of this project is to explore a bit the tasks of obtaining data,
 traning and deploy a model. The objective of the model is to predict the
 rent price of a proterty.
