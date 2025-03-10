@@ -26,6 +26,15 @@ ampla da área de dados. Abaixo você encontra uma lista dos projetos
 junto com a sua descrição.
 
 # Projetos de Freelancer
+## Projeção de preço de Catálogos
+O preço de catálogos tem um papel importante ao contratar um(a)
+músico(a), comprar ou adquirir direitos musicais. Por esse motivo,
+trabalhei com a MZIC a fim de desenvolver um modelo para predizer o
+valor do catálogo, dado o preço histórico de revenda de suas
+músicas. Na literatura, florestas de regressão resultam em modelos
+precisos para prever a popularidade de músicas, não encontramos muito
+sobre a predição de valores. Sendo assim, seguimos uma abordagem similar
+para projetarmos o preço do catálogo.
 
 # Projetos Pessoais
 ## [Brazilian Elections](https://github.com/gasobral/data-science/tree/main/Brazilian%20Elections)

@@ -19,14 +19,25 @@ read books and create projects.
 # Repository Description
 A collection of projects created in order to develop data science
 skills. I focus in building predictive models using *python*,
-*scikit-learn*, *pandas* and *numpy*. However, I also included (in some
-projects) graph and dashboard creation using data visualization tools,
-since they are important data skills. The area of knowledge of the projects
-are bit diverse, allowing us to develop broad view of data. Below you can
-find a list of projects followed by their description.
+*scikit-learn*, *pandas* and *numpy*. However, I also included (in
+some projects) graph and dashboard creation using data visualization
+tools, since they are important data skills. The area of knowledge of
+the projects are bit diverse, allowing us to develop broad view of
+data. Below you can find a list of projects followed by their
+description.
 
 # Freelance Projects
-## Forecats Catalogue Price
+For some projects I cannot provide much information, due to freelance
+contract.
+
+## Forecast Catalogue Price
+The catalogue price plays an important role when contracting a
+musician, buying or acquiring musical rights. For this reason, I
+worked with MZIC to develop a model to predict catalogue price, given
+its revenue historical prices. In literature, regression forests
+results in accurate models to predict song popularity, we did not
+find much about predicting its price. Then we followed a similar
+procedure to forecast catalogue price.
 
 # Personal Projects
 ## [Brazilian Elections](https://github.com/gasobral/data-science/tree/main/Brazilian%20Elections)
