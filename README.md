@@ -25,7 +25,10 @@ since they are important data skills. The area of knowledge of the projects
 are bit diverse, allowing us to develop broad view of data. Below you can
 find a list of projects followed by their description.
 
-# List of Projects
+# Freelance Projects
+## Forecats Catalogue Price
+
+# Personal Projects
 ## [Brazilian Elections](https://github.com/gasobral/data-science/tree/main/Brazilian%20Elections)
 Since election is an important topic, I decided to describe Brazilian
 election data from 2022. I obtained this data from Electoral Supreme
