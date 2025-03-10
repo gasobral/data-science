@@ -1,4 +1,5 @@
 # Data Science
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/gasobral/data-science/blob/main/README.md)
 
 ## Repository Description
 A collection of projects created in order to develop data science
