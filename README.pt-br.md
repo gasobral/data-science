@@ -1,4 +1,5 @@
 [![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/gasobral/data-science/blob/main/README.md)
+[![ru](https://img.shields.io/badge/lang-ru-yellow.svg)](https://github.com/gasobral/data-science/blob/main/README.ru.md)
 
 # Sobre o autor
 Sou um cientista da computação com experiência acadêmica e em empresas
