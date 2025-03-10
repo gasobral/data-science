@@ -14,7 +14,7 @@ read books and create projects.
 
 **Links**:
 - my profile at [Linkedin](https://www.linkedin.com/in/gabriel-sobral-99870846/) and [Kaggle](https://www.kaggle.com/gasobral)
-- my [class notes](https://github.com/gasobral/notas-de-aula) about data science and programming in Python (only in Brazilian Portuguese)
+- my [class notes](https://github.com/gasobral/notas-de-aula) about *Data Science* and *programming* in *Python* (only in Brazilian Portuguese)
 
 # Repository Description
 A collection of projects created in order to develop data science

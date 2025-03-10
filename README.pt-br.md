@@ -13,7 +13,7 @@ projetos.
 
 **Links**:
 - meu perfil no [Linkedin](https://www.linkedin.com/in/gabriel-sobral-99870846/) e no [Kaggle](https://www.kaggle.com/gasobral)
-- minhas [notas de aula](https://github.com/gasobral/notas-de-aula)
+- minhas [notas de aula](https://github.com/gasobral/notas-de-aula) sobre *Data Science* e *programação* em *Python*
 
 # Descrição do Repositório
 Uma coleção de projetos criados para desenvolver habilidades em
