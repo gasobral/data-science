@@ -5,7 +5,7 @@
 # About the autor
 I am a computer scientist with experience in academics and in tech
 industry. As support analyst, I worked for two banks companies. My
-exprience with data comes from generating reports and indicators
+exprience with data comes from generating reports and indicators of a
 regarding a reward system, data migration, lecturing, personal and
 freelancer projects. In order to keep developing my data skills, I
 read books and create projects.
