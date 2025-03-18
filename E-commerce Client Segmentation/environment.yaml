@@ -1,0 +1,4 @@
+---
+project_dirs:
+    data : cleaned processed raw
+    scripts: archive
