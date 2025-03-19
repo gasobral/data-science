@@ -4,12 +4,24 @@
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
-Client segmentation of brazlian e-commerce
+## Introduction
+Identify types of customers based on their characteristics is an
+important question in e-commerce. From the public [Olist
+dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+of Brazilian e-commerce, we applied customer algorithms to perform a
+customer segmentation. 
+
+<!---
+## TODO: update project intro with the results once they are done
+-->
+
+Below you will find project organization and how to execute the code
+for training or prediction.
 
 ## Project Organization
 
 ```
-├── LICENSE            <- Open-source license if one is chosen
+├── LICENSE            <- GNU GENERAL PUBLIC LICENSE
 ├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
 ├── README.md          <- The top-level README for developers using this project.
 ├── data
