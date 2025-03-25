@@ -1,5 +1,8 @@
-# Brazilian Elections
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/gasobral/data-science/blob/main/README.md)
+[![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/gasobral/data-science/blob/main/README.md)
+[![ru](https://img.shields.io/badge/lang-ru-yellow.svg)](https://github.com/gasobral/data-science/blob/main/README.md)
 
+# Brazilian Elections
 ## Introduction
 
 Since election is an important topic, I decided to describe Brazilian
@@ -17,6 +20,28 @@ elected, breakdown by party. Below you can find project requirements
 and how to use it.
 
 [^1]: Latest data available when this project was done.
+
+## Project directory structure
+```
+├── Brazilian Elections
+│   └── make_data.py
+├── data
+│   ├── processed
+│   └── raw
+│       ├── clean_data.zip
+│       └── data_set_source.txt
+├── notebooks
+│   └── data_analysis.ipynb
+├── README.md
+└── reports
+    ├── election analysis.pbix
+    ├── election_analysis.twbx
+    └── figures
+        ├── correlation_analysis.png
+        ├── correlation_mayors_councilors.png
+        ├── councilors_analysis.png
+        └── mayor_analysis.png
+```
 
 ## Requirements
 This project requires modules that are usually used in data science, which
