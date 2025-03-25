@@ -33,9 +33,12 @@ In order to view the dashboards created in this project, you can use
 to access the dashboard in *public Tableau*.
 
 ## How to use it
-Just execute the script data_visualization.py, in Source Code directory,
-to generate the graphs of jobs elected by party and the correlation graph
-between the number of mayors and councilors elected.
-
-Still in Source Code directory, you can find the notebook
-data_analysis.ipynb, which has the data exploratory analysis.
+Just open the [data analysis notebook](notebooks/data_analysis.ipynb),
+in notebooks directory, and execute all its cells. This will generate
+all the analysis along side with the graphs. Note that this execution
+will call the script [make_data.py](Brazilian Elections/make_data.py)
+in order to decompress the data, which will create a file with
+80Mb. The graphs are plotted in the notebook and also in
+[figures](reports/figures) directory (under reports). And also, in
+[reports](reports) directory you can find the files which contain
+*Tableau* and *Power BI* dashboards.
