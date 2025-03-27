@@ -24,7 +24,7 @@ and how to use it.
 ## Project directory structure
 ```
 ├── brazilian_elections   <- Source code for use in this project.
-│   ├── config.py          <- Store useful variables and configuration
+│   ├── config.py         <- Store useful variables and configuration
 │   ├── dataset.py        <- Scripts to download or generate data
 │   ├── __init__.py       <- Makes brazilian_elections a Python module
 │   ├── plots.py          <- Code to create visualizations
@@ -45,7 +45,7 @@ and how to use it.
 │   ├── data_set_source.txt
 │   ├── election analysis.pbix
 │   ├── election_analysis.twbx
-│   └── figures        <- Generated graphics and figures to be used in reporting
+│   └── figures           <- Generated graphics and figures to be used in reporting
 │       ├── correlation_analysis.png
 │       ├── correlation_mayors_councilors.png
 │       ├── councilors_analysis.png
@@ -71,7 +71,7 @@ to access the dashboard in *public Tableau*.
 Just open the [data analysis notebook](notebooks/data_analysis.ipynb),
 in notebooks directory, and execute all its cells. This will generate
 all the analysis along side with the graphs. Note that this execution
-will call the script [make_data.py](brazilian_elections/dataset.py)
+will call the script [dataset.py](brazilian_elections/dataset.py)
 in order to decompress the data, which will create a file with
 80Mb. The graphs are plotted in the notebook and also in
 [figures](reports/figures) directory (under reports). And also, in
