@@ -23,24 +23,34 @@ and how to use it.
 
 ## Project directory structure
 ```
-├── Brazilian Elections
-│   └── make_data.py
+├── brazilian_elections   <- Source code for use in this project.
+│   ├── config.py          <- Store useful variables and configuration
+│   ├── dataset.py        <- Scripts to download or generate data
+│   ├── __init__.py       <- Makes brazilian_elections a Python module
+│   ├── plots.py          <- Code to create visualizations
+│   └── __pycache__
+│       ├── config.cpython-310.pyc
+│       ├── dataset.cpython-310.pyc
+│       └── __init__.cpython-310.pyc
 ├── data
-│   ├── processed
-│   └── raw
-│       ├── clean_data.zip
-│       └── data_set_source.txt
-├── notebooks
+│   ├── processed         <- Data after being processed
+│   └── raw               <- The original, immutable data dump.
+├── LICENSE               <- Open-source license
+├── Makefile
+├── notebooks             <- Jupyter notebook with data analysis
 │   └── data_analysis.ipynb
+├── pyproject.toml        <- Project configuration file with package metadata for
 ├── README.md
-└── reports
-    ├── election analysis.pbix
-    ├── election_analysis.twbx
-    └── figures
-        ├── correlation_analysis.png
-        ├── correlation_mayors_councilors.png
-        ├── councilors_analysis.png
-        └── mayor_analysis.png
+├── reports               <- Generated analysis (Power BI and Tableau files)
+│   ├── data_set_source.txt
+│   ├── election analysis.pbix
+│   ├── election_analysis.twbx
+│   └── figures        <- Generated graphics and figures to be used in reporting
+│       ├── correlation_analysis.png
+│       ├── correlation_mayors_councilors.png
+│       ├── councilors_analysis.png
+│       └── mayor_analysis.png
+└── requirements.txt
 ```
 
 ## Requirements
@@ -61,7 +71,7 @@ to access the dashboard in *public Tableau*.
 Just open the [data analysis notebook](notebooks/data_analysis.ipynb),
 in notebooks directory, and execute all its cells. This will generate
 all the analysis along side with the graphs. Note that this execution
-will call the script [make_data.py](Brazilian Elections/make_data.py)
+will call the script [make_data.py](brazilian_elections/dataset.py)
 in order to decompress the data, which will create a file with
 80Mb. The graphs are plotted in the notebook and also in
 [figures](reports/figures) directory (under reports). And also, in
