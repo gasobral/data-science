@@ -42,7 +42,7 @@
 цены по каталогу.
 
 # Личные Проекты
-## [Brazilian Elections](https://github.com/gasobral/data-science/tree/main/Brazilian%20Elections)
+## [Brazilian Elections](https://github.com/gasobral/data-science/tree/main/brazilian_elections)
 Поскольку выборы являются важной темой, я решил описать данные о
 выборах в Бразилии за 2022 год. Я получил эти данные из Высшего
 избирательного суда и применил к ним разведывательный анализ

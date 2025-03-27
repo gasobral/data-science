@@ -38,7 +38,7 @@ sobre a predição de valores. Sendo assim, seguimos uma abordagem similar
 para projetarmos o preço do catálogo.
 
 # Projetos Pessoais
-## [Brazilian Elections](https://github.com/gasobral/data-science/tree/main/Brazilian%20Elections)
+## [Brazilian Elections](https://github.com/gasobral/data-science/tree/main/brazilian_elections)
 Como a eleição é um assunto importante, decidi descrever os dados da
 eleição brasileira de 2022. Obtive tais dados do Supremo Tribunal
 Eleitoral (TSE) e apliquei uma análise exploratória neles. Foram

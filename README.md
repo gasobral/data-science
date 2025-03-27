@@ -40,7 +40,7 @@ find much about predicting its price. Then we followed a similar
 procedure to forecast catalogue price.
 
 # Personal Projects
-## [Brazilian Elections](https://github.com/gasobral/data-science/tree/main/Brazilian%20Elections)
+## [Brazilian Elections](https://github.com/gasobral/data-science/tree/main/brazilian_elections)
 Since election is an important topic, I decided to describe Brazilian
 election data from 2022. I obtained this data from Electoral Supreme
 Court and applied an exploratory data analysis to them. Univariate and
