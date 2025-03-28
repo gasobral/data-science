@@ -2,26 +2,25 @@
 [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/gasobral/data-science/blob/main/brazilian_elections/README.pt-br.md)
 [![ru](https://img.shields.io/badge/lang-ru-yellow.svg)](https://github.com/gasobral/data-science/blob/main/brazilian_elections/README.ru.md)
 
-# Brazilian Elections
-## Introduction
+# Выборы в Бразилии
+## Введение
 
-Since election is an important topic, I decided to describe Brazilian
-election data from 2022[^1], which elected only mayors and
-councilors. I obtained this data from Electoral Supreme Court and
-applied an exploratory data analysis to it. Univariate and
-multivariate analysis were done to investigate a relation between
-candidate votes, jobs (mayors and councilors), state and other
-variables. By performing this exploratory data analysis, I could
-provide some interesting data insights. For example, the job and state
-has a great influence in total candidate votes, however, in average,
-the job has much more influence than the state. Moreover, I showed a
-positive the correlation between the number of councilors and mayors
-elected, breakdown by party. Below you can find project requirements
-and how to use it.
+Поскольку выборы важная тема, я решил описать данные бразильского
+выборов 2022[^1] года, только для мэров и советников. Я извлёк данные
+с сайта Высшего Избирательного Суда и применил к ним разведочный
+анализ данных. Одномерный и многомерный анализ проведены для изучения
+соотношения между голосами кандидатов, должностями (мэры и советники),
+штатом и другими переменными. Выполнив этот разведочный анализ данных,
+я смог представить некоторые интересные выводы. Например, должность и
+штат оказывают большое влияние на общее количество голосов кандидатов,
+однако, в среднем, должность оказывает гораздо большее влияние, чем
+штат. Более того, я показал положительную корреляцию между числом
+избранных советников и мэров, в разбивке по партиям. Ниже вы можете
+найти требования к проекту и как его использовать.
 
-[^1]: Latest data available when this project was done.
+[^1]: Последние данные доступны на момент завершения проекта.
 
-## Project directory structure
+## Структура каталогов проекта
 ```
 ├── brazilian_elections   <- Source code for use in this project.
 │   ├── config.py         <- Store useful variables and configuration
@@ -53,27 +52,27 @@ and how to use it.
 └── requirements.txt
 ```
 
-## Requirements
-This project requires modules that are usually used in data science, which
-are:
+## Требования
+Для этого проекта требуются модули, которые обычно используются в data
+science, а именно:
 
 - *pandas*
 - *numpy*
 - *seaborn*
 - *matplotlib*
 
-In order to view the dashboards created in this project, you can use
-*Tableau*, *Power BI* or click on the following
-[link](https://public.tableau.com/views/election_analysis_17428265010000/Votebashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-to access the dashboard in *public Tableau*.
+Для просмотра панелей мониторинга, созданных в этом проекте, вы можете
+использовать *Tableau*, *Power BI* или  нажмите на следующую ссылку
+[ссылку](https://public.tableau.com/views/election_analysis_17428265010000/Votebashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link),
+чтобы показать панель мониторинга на *public Tableau*.
 
-## How to use it
-Just open the [data analysis notebook](notebooks/data_analysis.ipynb),
-in notebooks directory, and execute all its cells. This will generate
-all the analysis along side with the graphs. Note that this execution
-will call the script [dataset.py](brazilian_elections/dataset.py)
-in order to decompress the data, which will create a file with
-80Mb. The graphs are plotted in the notebook and also in
-[figures](reports/figures) directory (under reports). And also, in
-[reports](reports) directory you can find the files which contain
-*Tableau* and *Power BI* dashboards.
+## Как запустить
+Только откройте [блокнот анализа
+данных](notebooks/data_analysis.ipynb), внутри каталога notebooks, и
+выполите все ячейки. Это создаёт весь анализ вместе с
+графиками. Обратите внимание, что это выполнение запустит скрипт
+[dataset.py](brazilian_elections/dataset.py) для того, чтобы
+распаковать данные и создаёт файл размером 80 Мбайт. Графики строятся
+в блокноте, а также в каталоге [figures](reports/figures). Более того,
+в каталоге [reports](reports) вы можете найти файлы, которые содержат
+*Tableau* и *Power BI* панели мониторинга.

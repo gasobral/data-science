@@ -6,19 +6,18 @@
 ## Introdução
 
 Como a eleição é um tópico importante, então decidi descrever os dados
-das eleições brasileiras de 2022[^1], onde foram eleitos apenas
-prefeitos e vereadores. Obtive esses dados do Supremo Tribunal
-Eleitoral e apliquei uma análise exploratória dos dados
-neles. Análises univariadas e multivariadas foram realizadas para
-investigar a relação entre os votos dos candidatos, cargos (vereador e
-prefeito), estado e outras variáveis. Ao performar essa análise
-exploratória dos dados, pode prover alguns resultados
-interessantes. Por exemplo, o cargo e o estado tem uma grande
-influência no total de votos dos candidatos, porém, em média, o cargo
-tem uma influência maior do que o estado. Além disso, mostrei uma
-correlação positiva entre o número de vereadores e prefeitos eleitos,
-separado por partido. Abaixo você encontre os requerimentos do projeto
-e como usá-lo.
+das eleições brasileiras de 2022[^1], apenas para prefeitos e
+vereadores. Obtive esses dados do Supremo Tribunal Eleitoral e
+apliquei uma análise exploratória dos dados neles. Análises
+univariadas e multivariadas foram realizadas para investigar a relação
+entre os votos dos candidatos, cargos (vereador e prefeito), estado e
+outras variáveis. Ao performar essa análise exploratória dos dados,
+pode prover alguns resultados interessantes. Por exemplo, o cargo e o
+estado têm uma grande influência no total de votos dos candidatos,
+porém, em média, o cargo tem uma influência maior do que o
+estado. Além disso, mostrei uma correlação positiva entre o número de
+vereadores e prefeitos eleitos, separado por partido. Abaixo você
+encontre os requerimentos do projeto e como usá-lo.
 
 [^1]: Última data disponível dos dados quando esse projeto fo feito.
 
