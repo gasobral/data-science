@@ -32,8 +32,8 @@ contract.
 
 ## Forecast Catalogue Price
 The catalogue price plays an important role when contracting a
-musician, buying or acquiring musical rights. For this reason, I
-worked with MZIC to develop a model to predict catalogue price, given
+musician, buying or acquiring musical rights. For this reason, I am
+working with MZIC to develop a model to predict catalogue price, given
 its revenue historical prices. In literature, regression forests
 results in accurate models to predict song popularity, we did not
 find much about predicting its price. Then we followed a similar
