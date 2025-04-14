@@ -18,14 +18,14 @@ The project is still being developed, so for now we do not have
 results. But that is the current status:
 
 ### TODO list:
-[X] data initial analysis (data dictionary, univariate analysis, check
+- [X] data initial analysis (data dictionary, univariate analysis, check
 for null or duplicated values);
-[X] identify data to be used for client segmentation
-[-] prototype functions to join the data from the data sets
-[ ] train k-Means
-[ ] use k-Means to obtain customer groups
-[ ] do the analysis
-[ ] write a report
+- [X] identify data to be used for client segmentation
+- [-] prototype functions to join the data from the data sets
+- [ ] train k-Means
+- [ ] use k-Means to obtain customer groups
+- [ ] do the analysis
+- [ ] write a report
 
 For [X], [-] and [ ] we denote, respectively, done, in-progress and not
 started.

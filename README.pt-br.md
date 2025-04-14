@@ -39,7 +39,7 @@ sobre a predição de valores. Sendo assim, seguimos uma abordagem similar
 para projetarmos o preço do catálogo.
 
 # Projetos Pessoais
-## [Brazilian Elections](https://github.com/gasobral/data-science/tree/main/brazilian_elections)
+## [Eleições Brasileiras](https://github.com/gasobral/data-science/tree/main/brazilian_elections)
 Como a eleição é um assunto importante, decidi descrever os dados da
 eleição brasileira de 2022. Obtive tais dados do Supremo Tribunal
 Eleitoral (TSE) e apliquei uma análise exploratória neles. Foram
@@ -51,3 +51,15 @@ têm uma grande influência no número total de votos, entretanto, na
 média, o carga tem mais influência do que estado. Além disso, pude
 mostrar uma correlação positiva entre o número de vereados e prefeitos
 eleitos.
+
+## [Segmentação de Clientes](https://github.com/gasobral/data-science/tree/main/client_segmentation)
+Identificar grupos de clientes similares, segmentação de clientes, é uma
+ferramenta importante para uma tomada de decisão baseada em dados numa
+empresa, seja para o marketing ou avaliação de produtos. Usando o [data
+set da
+Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce),
+comecei a trabalhar em um projeto para usar o $k$-Means a fim de fazer
+uma segmentação de clientes. Esse projeto está em desenvolvimento e você
+pode ser o seu status clicando neste
+[link](https://github.com/gasobral/data-science/tree/main/client_segmentation). Assim
+que tiver atualizações, o projeto será atualizado.

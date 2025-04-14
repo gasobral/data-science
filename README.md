@@ -52,3 +52,14 @@ has a great influence in total candidate votes, however, in average,
 the job has much more influence than the state. Moreover, I showed a
 positive the correlation between the number of councilors and mayors
 elected.
+
+## [Customer Segmentation](https://github.com/gasobral/data-science/tree/main/client_segmentation)
+Identify groups of similars customeres, customer segmentation, is an
+important tool for data driven decision at a company for marketing and
+product evaluation. Using [Olist
+data set](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), I
+started working on a project to use $k$-Means to perform a cluster
+segmentation. This project is being developed but you can see its
+current status by clicking on this
+[link](https://github.com/gasobral/data-science/tree/main/client_segmentation). I
+will updated it once more parts of this project are done.
