@@ -14,6 +14,22 @@ dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) of
 Brazilian e-commerce, we applied $k$-Means to identify similar groups of
 customers.
 
+The project is still being developed, so for now we do not have
+results. But that is the current status:
+
+### TODO list:
+[X] data initial analysis (data dictionary, univariate analysis, check
+for null or duplicated values);
+[X] identify data to be used for client segmentation
+[-] prototype functions to join the data from the data sets
+[ ] train k-Means
+[ ] use k-Means to obtain customer groups
+[ ] do the analysis
+[ ] write a report
+
+For [X], [-] and [ ] we denote, respectively, done, in-progress and not
+started.
+
 [^1]: [Alves Gomes, M., Meisen, T. A review on customer segmentation
     methods for personalized customer targeting in e-commerce use
     cases. Inf Syst E-Bus Manage 21, 527–570
@@ -21,7 +37,7 @@ customers.
 
 [^2]: [Cooil, B., Aksoy, L., & Keiningham, T. L. (2008). Approaches to
     Customer Segmentation. Journal of Relationship Marketing, 6(3–4),
-    9–39.](https://doi.org/10.1300/J366v06n03_020)
+    9–39.](https://doi.org/10.1300/J366v06n03_02)
 
 <!---
 ## TODO: update project intro with the results once they are done
