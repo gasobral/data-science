@@ -5,12 +5,10 @@ from loguru import logger
 from tqdm import tqdm
 import typer
 
-from sklearn.preprocessing import OrdinalEncoder
-from sklearn.preprocessing import RobustScaler
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.pipeline      import Pipeline
-from sklearn.compose       import ColumnTransformer
+import pandas as pd
+import numpy  as np
 
+## imports directory configuration
 from client_segmentation.config import PROCESSED_DATA_DIR
 from client_segmentation.config import RAW_DATA_DIR
 from client_segmentation.config import INTERIM_DATA_DIR
@@ -28,7 +26,9 @@ from client_segmentation.config import olist_sellers_dataset_map
 from client_segmentation.config import product_category_name_translation_map
 from client_segmentation.config import data_mapping
 
+
 app = typer.Typer()
+
 
 ## Functions - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 def retrieve_dataset(input_path: Path = RAW_DATA_DIR) -> int:
@@ -89,19 +89,76 @@ The function returns 1 if any error happens, otherwise, it returns 0.
             return -1
 
 
+def data_aquisition(file_path: Path,
+                    data_mapping: dict) -> pd.DataFrame:
+    """
+    Given a path to a csv file, returns a data frame with the data from
+    the csv file.
+    
+    Arguments
+    ---------
+    file_path: a file path of a csv file.
+    
+    data_mapping: a dictionary with a mapping, which tells type of data
+                  for each column of csv file.
+
+    Return
+    ------
+    A data frame with the data loaded from csv file.
+    """
+
+    ## create file without file extention (suffix) in order to
+    ## obtain the date mapping for dataset columns 
+    name_suffixless = file_path.name.split('.')[0]
+    dataset = pd.read_csv(file_path,
+                          dtype=data_mapping[name_suffixless],
+                          date_format="%Y-%m-%d %H:%M:%S")
+
+    ## creates a list only with the columns which contain data on
+    ## their name
+    date_columns = [col for col in dataset.columns
+                    if "date" in col or
+                    "time" in col or
+                    "order_approved_at" in col]
+
+    if len(date_columns) != 0:
+        for col in date_columns:
+            dataset[col] = pd.to_datetime(dataset[col],
+                                          format="%Y-%m-%d %H:%M:%S")
+    else:
+        print("Data set has no columns which contain date!"
+              " No parsing required.")
+
+    return dataset
+
+
 @app.command()
 def main(
     input_path: Path = RAW_DATA_DIR,
     inter_path: Path = INTERIM_DATA_DIR,
     output_path: Path = PROCESSED_DATA_DIR,
 ):
+    """
+Loads the data set from Kaggler into raw directory and export them into
+intermediate directory.
+    """
 
+    ## retreives the data set from Kaggle
     if retrieve_dataset(input_path) != 0:
         logger.error("Failed to download the dataset!\n")
         return -1
 
-    ## TODO: executar o pré-processanmento
-    ##       mover os arquivos para o diretório intermediário
+    ## once they data set is downloaded, load the data (parsin
+    ## date columns) and move them to intermediate directory
+    logger.info("Loading the data set from raw directory...")
+
+    for csv_file in input_path.glob("*.csv"):
+        df_raw_data = data_aquisition(csv_file, data_mapping)
+        df_raw_data.to_csv(INTERIM_DATA_DIR / csv_file.name,
+                           index=False,
+                           date_format="%Y-%m-%d %H:%M:%S")
+        logger.info(f"Exported loaded data from {csv_file} "
+                    f"to {INTERIM_DATA_DIR / csv_file.name}")
 
     return 0
 
