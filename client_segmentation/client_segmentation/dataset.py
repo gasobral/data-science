@@ -1,9 +1,9 @@
 from pathlib import Path
-import zipfile
 
-from loguru import logger
-from tqdm import tqdm
 import typer
+import sqlite3
+from loguru import logger
+from tqdm   import tqdm
 
 import pandas as pd
 import numpy  as np
@@ -12,6 +12,7 @@ import numpy  as np
 from client_segmentation.config import PROCESSED_DATA_DIR
 from client_segmentation.config import RAW_DATA_DIR
 from client_segmentation.config import INTERIM_DATA_DIR
+from client_segmentation.config import DATABASE
 
 ## imports the data mapping for the csv files from Olist data set
 from client_segmentation.config import olist_customers_dataset_map
@@ -85,7 +86,7 @@ The function returns 1 if any error happens, otherwise, it returns 0.
             return 0
 
         except Exception as e:
-            print(e)
+            logger.error(f"{e}")
             return -1
 
 
@@ -126,10 +127,78 @@ def data_aquisition(file_path: Path,
             dataset[col] = pd.to_datetime(dataset[col],
                                           format="%Y-%m-%d %H:%M:%S")
     else:
-        print("Data set has no columns which contain date!"
-              " No parsing required.")
+        logger.info("Data set has no columns which contain date!"
+                    " No parsing required.")
 
     return dataset
+
+
+def extract_data(input_path: Path,
+                 inter_path: Path,
+                 data_mapping: dict):
+    """
+Reads a data set in raw directory and extract their data into csv
+files at intermediate directory.
+
+Argumetns
+---------
+input_path: a path object which points to raw directory.
+
+inter_path: a path object which points to intermediate directory.
+
+data_mapping: a dictionary containig the types of columns for each
+              csv file in data set.
+    """
+
+    ## once they data set is downloaded, load the data (parsin
+    ## date columns) and move them to intermediate directory
+    logger.info("Loading the data set from raw directory...")
+
+    for csv_file in input_path.glob("*.csv"):
+        df_raw_data = data_aquisition(csv_file, data_mapping)
+        df_raw_data.to_csv(inter_path / csv_file.name,
+                           index=False,
+                           date_format="%Y-%m-%d %H:%M:%S")
+        logger.info(f"Exported loaded data from {csv_file} "
+                    f"to {INTERIM_DATA_DIR / csv_file.name}")
+
+
+def create_database(inter_path: Path,
+                    database_path: Path,
+                    data_mapping: dict):
+    """
+Creates a database with the data from csv files extracted from data
+set.
+
+Argumetns
+---------
+inter_path: a path object which points to intermediate directory.
+
+database_path: a path object which points to database path.
+
+data_mapping: a dict with a mapping of data types for each column
+              for csv files in data set.
+    """
+
+    try:
+        with sqlite3.connect(database_path) as db_conn:
+            for csv_file in inter_path.glob("*_dataset.csv"):
+                df_csv = data_aquisition(csv_file, data_mapping)
+                ## duplicated lines are dropped before inserting the
+                ## data into the database
+                df_csv.drop_duplicates(inplace=True)
+
+                table_name = csv_file.name.removeprefix('olist_').\
+                    removesuffix('_dataset.csv')
+                df_csv.to_sql(table_name,
+                              db_conn,
+                              if_exists='replace',
+                              index=False)
+                logger.info(f"Created and loaded data into the table"
+                            f" {table_name}.")
+
+    except sqlite3.Error as e:
+        logger.exception(e)
 
 
 @app.command()
@@ -148,17 +217,13 @@ intermediate directory.
         logger.error("Failed to download the dataset!\n")
         return -1
 
-    ## once they data set is downloaded, load the data (parsin
-    ## date columns) and move them to intermediate directory
-    logger.info("Loading the data set from raw directory...")
+    ## exports the data set into intermediate directory
+    extract_data(input_path, inter_path, data_mapping)
 
-    for csv_file in input_path.glob("*.csv"):
-        df_raw_data = data_aquisition(csv_file, data_mapping)
-        df_raw_data.to_csv(INTERIM_DATA_DIR / csv_file.name,
-                           index=False,
-                           date_format="%Y-%m-%d %H:%M:%S")
-        logger.info(f"Exported loaded data from {csv_file} "
-                    f"to {INTERIM_DATA_DIR / csv_file.name}")
+    ## creates a database with the data from csv files
+    create_database(inter_path,
+                    output_path / DATABASE,
+                    data_mapping)
 
     return 0
 

@@ -21,6 +21,18 @@ MODELS_DIR = PROJ_ROOT / "models"
 REPORTS_DIR = PROJ_ROOT / "reports"
 FIGURES_DIR = REPORTS_DIR / "figures"
 
+SQL_DIR = PROJ_ROOT / "sql"
+
+# Set up the database name
+DATABASE = "ecommerce.db"
+
+# SQL Queries used in the project
+SQL_CUSTOMER_BUY_DATA = 'customer_buys_data.sql'
+
+# Set up output file names
+CUSTOMER_BUY_DATA = 'customer_data.csv'
+CUSTOMER_BUY_DATA_TRANS = 'customer_data_trans.csv'
+
 # If tqdm is installed, configure loguru with tqdm.write
 # https://github.com/Delgan/loguru/issues/135
 try:
