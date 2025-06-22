@@ -3,10 +3,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 from loguru import logger
 
-# Load environment variables from .env file if it exists
+## Load environment variables from .env file if it exists
 load_dotenv()
 
-# Paths
+## Paths
 PROJ_ROOT = Path(__file__).resolve().parents[1]
 logger.info(f"PROJ_ROOT path is: {PROJ_ROOT}")
 
@@ -23,18 +23,22 @@ FIGURES_DIR = REPORTS_DIR / "figures"
 
 SQL_DIR = PROJ_ROOT / "sql"
 
-# Set up the database name
+## Set up the database name
 DATABASE = "ecommerce.db"
 
-# SQL Queries used in the project
+## SQL Queries used in the project
+## file below must be under SQL_DIR
 SQL_CUSTOMER_BUY_DATA = 'customer_buys_data.sql'
 
-# Set up output file names
+## Set up output file names
+## files below must be under PROCESSED_DATA_DIR
 CUSTOMER_BUY_DATA = 'customer_data.csv'
-CUSTOMER_BUY_DATA_TRANS = 'customer_data_trans.csv'
+## custome data with the labels obtained using a clustering
+## algorithm
+CUSTOMER_WITH_LABELS = 'customer_with_labels.csv'
 
-# If tqdm is installed, configure loguru with tqdm.write
-# https://github.com/Delgan/loguru/issues/135
+## If tqdm is installed, configure loguru with tqdm.write
+## https://github.com/Delgan/loguru/issues/135
 try:
     from tqdm import tqdm
 

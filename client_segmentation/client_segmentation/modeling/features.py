@@ -57,8 +57,6 @@ sql_path: a path containing the file with a SQL query to extract data
                 customer_data.to_csv(output_path / csv_path,
                                      index=False)
                 logger.info(f'Exported data to {csv_path}')
-                ## TODO: executar o pipeline
-                ##       exportar o arquivo transformado
 
         except sqlite3.Error as e:
             logger.exception(e)
