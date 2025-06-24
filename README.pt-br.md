@@ -58,8 +58,22 @@ ferramenta importante para uma tomada de decisão baseada em dados numa
 empresa, seja para o marketing ou avaliação de produtos. Usando o [data
 set da
 Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce),
-comecei a trabalhar em um projeto para usar o $k$-Means a fim de fazer
-uma segmentação de clientes. Esse projeto está em desenvolvimento e você
-pode ser o seu status clicando neste
-[link](https://github.com/gasobral/data-science/tree/main/client_segmentation). Assim
-que tiver atualizações, o projeto será atualizado.
+aplicamos um algoritmo de clusterização hierárquico para identificar
+grupos de clientes similares baseado na sua localização (cidade e
+estado), preço, categoria do produto e informações sobre o
+pagamento. Devido a uma limitação de recursos computacionais, utilizamos
+apenas 20% dos dados originais para fazer a segmentação de
+clientes. Encontramos dois grupos de clientes, que são similares em
+relação ao tipo de pagamento, categoria de produto, preço, valor do
+frete e número de parcelamentos. A maioria dos clientes usam cartão de
+crédito, compram itens de pequeno valor e suas categorias preferidas
+são: cama & mesa & banho, saúde & beleza, esportes, móveis & decoração e
+informática. Sobre o número de parcelas, os clientes normalmente fazem
+apenas uma. Porém há alguns pagamentos parcelados de 2 a 6 meses, pois
+os e-commerces normalmente oferecem parcelamentos sem juros em até 6
+vezes. No entanto, eles diferem sobre a localização e no número de meios
+de pagamento. Um grupo de clientes usam apenas um meio de pagamento,
+enquanto que o outro grupo usa dois. Os resultados encontrados podem ser
+úteis para descrever os clientes e sugerir campanhas para as categorias
+mais populares. Você pode encontrar uma apresentação destes resultados
+no diretório report.

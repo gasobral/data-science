@@ -60,16 +60,18 @@ product evaluation. Using [Olist data
 set](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), we
 applied a hierarchical clustering algorithm to identify similar groups
 of customers based on customer location (city and state), price, product
-category and payment data. We found two groups of customers which are
-alike in payment type, product category, price, freight value and
-payment installments. Most of customers use credit card, buy items with
-small value and the preferred categories are: bed & bath & table, health
-& beauty, sport, furniture & decor and informatics. About payment
-installment, customers usually use one. But some installment payment
-range from 2 to 6 because some e-commerce offers tax free up to 6
-installments. However, they differ at customer location and payment
-sequential (number of payment methods). One group of customer uses only
-one payment method, while the other group uses two. These information
-can be useful to describe customer behavior and to suggest campaigns for
-most popular categories. You can find a presentation with the results at
-report category.
+category and payment data. Due to computational resources limitation, we
+used only 20% of original data do perform a customer segmentation. We
+found two groups of customers which are alike in payment type, product
+category, price, freight value and payment installments. Most of
+customers use credit card, buy items with small value and the preferred
+categories are: bed & bath & table, health & beauty, sport, furniture &
+decor and informatics. About payment installment, customers usually use
+one. But some installment payment range from 2 to 6 because some
+e-commerce offers tax free up to 6 installments. However, they differ at
+customer location and payment sequential (number of payment
+methods). One group of customer uses only one payment method, while the
+other group uses two. These information can be useful to describe
+customer behavior and to suggest campaigns for most popular
+categories. You can find a presentation with the results at report
+directory.
