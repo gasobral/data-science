@@ -60,6 +60,21 @@ create_environment:
 data: requirements
 	$(PYTHON_INTERPRETER) client_segmentation/dataset.py
 
+.PHONY: features
+features: data
+	$(PYTHON_INTERPRETER) client_segmentation/modeling/features.py
+
+.PHONY: train
+train: features
+	$(PYTHON_INTERPRETER) client_segmentation/modeling/train.py
+
+.PHONY: all
+all: train
+
+.PHONY: plots
+plots: train
+	$(PYTHON_INTERPRETER) client_segmentation/modeling/train.py
+
 
 #################################################################################
 # Self Documenting Commands                                                     #
