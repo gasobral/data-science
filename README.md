@@ -56,10 +56,20 @@ elected.
 ## [Customer Segmentation](https://github.com/gasobral/data-science/tree/main/client_segmentation)
 Identify groups of similars customeres, customer segmentation, is an
 important tool for data driven decision at a company for marketing and
-product evaluation. Using [Olist
-data set](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), I
-started working on a project to use $k$-Means to perform a cluster
-segmentation. This project is being developed but you can see its
-current status by clicking on this
-[link](https://github.com/gasobral/data-science/tree/main/client_segmentation). I
-will updated it once more parts of this project are done.
+product evaluation. Using [Olist data
+set](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce), we
+applied a hierarchical clustering algorithm to identify similar groups
+of customers based on customer location (city and state), price, product
+category and payment data. We found two groups of customers which are
+alike in payment type, product category, price, freight value and
+payment installments. Most of customers use credit card, buy items with
+small value and the preferred categories are: bed & bath & table, health
+& beauty, sport, furniture & decor and informatics. About payment
+installment, customers usually use one. But some installment payment
+range from 2 to 6 because some e-commerce offers tax free up to 6
+installments. However, they differ at customer location and payment
+sequential (number of payment methods). One group of customer uses only
+one payment method, while the other group uses two. These information
+can be useful to describe customer behavior and to suggest campaigns for
+most popular categories. You can find a presentation with the results at
+report category.
