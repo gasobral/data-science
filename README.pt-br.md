@@ -75,5 +75,5 @@ vezes. No entanto, eles diferem sobre a localização e no número de meios
 de pagamento. Um grupo de clientes usam apenas um meio de pagamento,
 enquanto que o outro grupo usa dois. Os resultados encontrados podem ser
 úteis para descrever os clientes e sugerir campanhas para as categorias
-mais populares. Você pode encontrar uma apresentação destes resultados
+mais populares. Você pode encontrar uma [apresentação](https://github.com/gasobral/data-science/blob/main/client_segmentation/reports/customer_segmentation_presentation.pptx) destes resultados
 no diretório report.

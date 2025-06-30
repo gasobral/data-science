@@ -73,5 +73,5 @@ customer location and payment sequential (number of payment
 methods). One group of customer uses only one payment method, while the
 other group uses two. These information can be useful to describe
 customer behavior and to suggest campaigns for most popular
-categories. You can find a presentation with the results at report
+categories. You can find a [presentation](https://github.com/gasobral/data-science/blob/main/client_segmentation/reports/customer_segmentation_presentation.pptx) with the results at report
 directory.
