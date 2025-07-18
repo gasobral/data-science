@@ -1,13 +1,20 @@
-# music_populatiry
+# Music Popularity
 
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
-predict music popularity using streaming data
 
-## Project Organization
+## 1. Introduction
 
+A music can become popular due to its melody, chords and structure. The
+*Hit Song Science problem* aims to identify and predict the factors that
+make a song a "hit" or commercially successful. We analyzed some papers
+regarding this topic, which used data from streaming services, and
+complied them. Moreover, we 
+
+
+## 2. Project Organization
 ```
 ├── LICENSE            <- Open-source license if one is chosen
 ├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
@@ -27,7 +34,7 @@ predict music popularity using streaming data
 │                         `1.0-jqp-initial-data-exploration`.
 │
 ├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         music_populatiry and configuration for tools like black
+│                         music_popularity and configuration for tools like black
 │
 ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
 │
@@ -39,9 +46,9 @@ predict music popularity using streaming data
 │
 ├── setup.cfg          <- Configuration file for flake8
 │
-└── music_populatiry   <- Source code for use in this project.
+└── music_popularity   <- Source code for use in this project.
     │
-    ├── __init__.py             <- Makes music_populatiry a Python module
+    ├── __init__.py             <- Makes music_popularity a Python module
     │
     ├── config.py               <- Store useful variables and configuration
     │
@@ -59,3 +66,4 @@ predict music popularity using streaming data
 
 --------
 
+## 3. How to execute the code

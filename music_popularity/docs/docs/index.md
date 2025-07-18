@@ -1,8 +1,8 @@
-# music_populatiry documentation!
+# music_popularity documentation!
 
 ## Description
 
-predict music popularity using streaming data
+Predict music popularity using streaming data.
 
 ## Commands
 

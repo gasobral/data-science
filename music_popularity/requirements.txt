@@ -1,6 +1,7 @@
 loguru
 mkdocs
 pip
+pytest
 python-dotenv
 ruff
 tqdm

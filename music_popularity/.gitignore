@@ -184,6 +184,3 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-
-# Ignoring references directory
-references/

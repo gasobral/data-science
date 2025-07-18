@@ -4,7 +4,7 @@ from loguru import logger
 from tqdm import tqdm
 import typer
 
-from music_populatiry.config import PROCESSED_DATA_DIR
+from music_popularity.config import PROCESSED_DATA_DIR
 
 app = typer.Typer()
 

@@ -2,7 +2,7 @@
 # GLOBALS                                                                       #
 #################################################################################
 
-PROJECT_NAME = music_populatiry
+PROJECT_NAME = music_popularity
 PYTHON_VERSION = 3.13
 PYTHON_INTERPRETER = python
 
@@ -41,6 +41,10 @@ format:
 
 
 
+## Run tests
+.PHONY: test
+test:
+	python -m pytest tests
 
 
 ## Set up Python interpreter environment
@@ -60,7 +64,7 @@ create_environment:
 ## Make dataset
 .PHONY: data
 data: requirements
-	$(PYTHON_INTERPRETER) music_populatiry/dataset.py
+	$(PYTHON_INTERPRETER) music_popularity/dataset.py
 
 
 #################################################################################
