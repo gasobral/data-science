@@ -8,10 +8,24 @@
 ## 1. Introduction
 
 A music can become popular due to its melody, chords and structure. The
-*Hit Song Science problem* aims to identify and predict the factors that
-make a song a "hit" or commercially successful. We analyzed some papers
-regarding this topic, which used data from streaming services, and
-complied them. Moreover, we 
+*Hit Song Science (HSS) problem* aims to identify and predict the
+factors that make a song a "hit" or commercially successful. We analyzed
+some papers regarding this topic, which used data from streaming
+services, and complied them. In sum, we found that audio features
+(danceability, energy, valence, acousticness), obtained from streaming
+data (like Spotify and YouTube), are important features for
+modeling. Social media signals, particularly from YouTube, significantly
+improve predictive performance. Cultural and regional contexts influence
+which features are most predictive, for example, HSS for Indonesia
+Afrobeats affects feature importance. A shift toward interpretable and
+complex models (e.g., SHAP, neural networks) marks a new phase in HSS
+research. You can find the [literature
+review](references/literature_review.md) at [references](references)
+directory.
+
+<!-- TODO: continuar a partir daqui, quando o restante estiver
+           pronto -->
+We decided to ...
 
 
 ## 2. Project Organization
