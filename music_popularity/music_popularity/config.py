@@ -21,6 +21,12 @@ MODELS_DIR = PROJ_ROOT / "models"
 REPORTS_DIR = PROJ_ROOT / "reports"
 FIGURES_DIR = REPORTS_DIR / "figures"
 
+DATABASE_DIR = PROJ_ROOT / "processed"
+DATABASE_FILE = DATABASE_DIR / "song_data.db"
+
+# Urls
+DATASET_URL = "nelgiriyewithana/most-streamed-spotify-songs-2024"
+
 # If tqdm is installed, configure loguru with tqdm.write
 # https://github.com/Delgan/loguru/issues/135
 try:
@@ -28,5 +34,6 @@ try:
 
     logger.remove(0)
     logger.add(lambda msg: tqdm.write(msg, end=""), colorize=True)
+
 except ModuleNotFoundError:
     pass
