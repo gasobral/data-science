@@ -2,7 +2,6 @@
 from pathlib import Path
 
 ## python 3rd party modules
-from dotenv import load_dotenv
 from loguru import logger
 import streamlit as st
 import pandas as pd
