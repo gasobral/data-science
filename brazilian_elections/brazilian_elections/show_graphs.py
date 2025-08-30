@@ -181,8 +181,6 @@ if len(processed_files) != 0:
                 f" data insights. For in depth discussion, please "
                 f" this [notebook]({URL_NOTEBOOK}). Below we provide "
                 f" some interative graphs regardings our analysis.")
-#    st.write("We analysised brazilian electoral data from 2022 and"
-#             " showed below some graphs regarding this analysis.")
 
     ## generates the data for the plots
     ## plot - average candidate votes per job and state
@@ -201,56 +199,56 @@ if len(processed_files) != 0:
                  y='candidate_vote_count',
                  color='job')
 
-    ## plot - histogram of candidate votes, given job and state
-    st.subheader("Histogram of candidate votes for job and state.")
-    col1, col2 = st.columns(2)
-
-    with col1:
-        jobs = processed_data['job'].unique()
-        job_selection = st.selectbox(
-            "Select a job",
-            options=jobs,
-            index=0
-        )
-
-    with col2:
-        states = processed_data['uf'].unique()
-        state_selection = st.selectbox(
-            "Select a state (uf)",
-            options=states,
-            index=0
-        )
-
-    candidate_vote_histogram = get_candidate_vote_data(processed_data,
-                                                       state_selection,
-                                                       job_selection)
-    fig = px.histogram(candidate_vote_histogram)
-    st.plotly_chart(fig)
-
-
-    ## plot the number of elected mayors and councilors
-    st.subheader("Number of mayors elected")
-    mayor_elected = get_job_elected(processed_data, 'prefeito')
-    st.bar_chart(data=mayor_elected,
-                 x='main_party',
-                 y='amount')
-
-    st.subheader("Number of councilors elected")
-    councilor_elected = get_job_elected(processed_data, 'vereador')
-    st.bar_chart(data=councilor_elected,
-                 x='main_party',
-                 y='amount')
-
-    ## total de votor por partido e job
-    sum_vote_party, total_vote_party = get_vote_party(processed_data)
-    st.subheader("Sum of candidade votes per job and main party.")
-    st.bar_chart(data=sum_vote_party,
-                 x='main_party',
-                 y='candidate_vote_count',
-                 color='job')
-
-    st.subheader("Average of candidade votes per job and main party.")
-    st.bar_chart(data=total_vote_party,
-                 x='main_party',
-                 y='candidate_vote_count',
-                 color='job')
+#    ## plot - histogram of candidate votes, given job and state
+#    st.subheader("Histogram of candidate votes for job and state.")
+#    col1, col2 = st.columns(2)
+#
+#    with col1:
+#        jobs = processed_data['job'].unique()
+#        job_selection = st.selectbox(
+#            "Select a job",
+#            options=jobs,
+#            index=0
+#        )
+#
+#    with col2:
+#        states = processed_data['uf'].unique()
+#        state_selection = st.selectbox(
+#            "Select a state (uf)",
+#            options=states,
+#            index=0
+#        )
+#
+#    candidate_vote_histogram = get_candidate_vote_data(processed_data,
+#                                                       state_selection,
+#                                                       job_selection)
+#    fig = px.histogram(candidate_vote_histogram)
+#    st.plotly_chart(fig)
+#
+#
+#    ## plot the number of elected mayors and councilors
+#    st.subheader("Number of mayors elected")
+#    mayor_elected = get_job_elected(processed_data, 'prefeito')
+#    st.bar_chart(data=mayor_elected,
+#                 x='main_party',
+#                 y='amount')
+#
+#    st.subheader("Number of councilors elected")
+#    councilor_elected = get_job_elected(processed_data, 'vereador')
+#    st.bar_chart(data=councilor_elected,
+#                 x='main_party',
+#                 y='amount')
+#
+#    ## total de votor por partido e job
+#    sum_vote_party, total_vote_party = get_vote_party(processed_data)
+#    st.subheader("Sum of candidade votes per job and main party.")
+#    st.bar_chart(data=sum_vote_party,
+#                 x='main_party',
+#                 y='candidate_vote_count',
+#                 color='job')
+#
+#    st.subheader("Average of candidade votes per job and main party.")
+#    st.bar_chart(data=total_vote_party,
+#                 x='main_party',
+#                 y='candidate_vote_count',
+#                 color='job')
