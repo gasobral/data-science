@@ -25,7 +25,7 @@ Returns
 -------
 A list with all csv processed files.
     """
-    return [csv_file for csv_file in processed_dir.glob("*.csv")]
+    return [csv_file for csv_file in processed_dir.glob("*.pqt")]
 
 
 @st.cache_data
@@ -42,7 +42,7 @@ Returns
 A data frame with the data read from a csv file.
     """
 
-    processed_data = pd.read_csv(file_path)
+    processed_data = pd.read_parquet(file_path)
     return processed_data
 
 
@@ -171,7 +171,7 @@ URL_NOTEBOOK = 'https://github.com/gasobral/data-science/blob/main/brazilian_ele
 ## find all csv files at processed data directory
 processed_files = retrieve_processed_files(PROCESSED_DATA_DIR)
 
-## if any csv file were found, then generate the data for the plots
+## if a file was found, then generate the data for the plots
 if len(processed_files) != 0:
     processed_data = get_processed_data(processed_files[0])
 

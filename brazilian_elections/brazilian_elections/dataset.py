@@ -3,6 +3,7 @@ import zipfile
 
 from loguru import logger
 from tqdm import tqdm
+import pandas as pd
 import typer
 
 try:
@@ -47,6 +48,15 @@ def main(
                 curr_file.rename(PROCESSED_DATA_DIR / curr_file.name)
                 logger.info(f"Moved the file {curr_file.name} into "
                             f"directory {PROCESSED_DATA_DIR}.")
+
+            if curr_file.suffix not in {".pqt", ".pgt", ".parquet"}:
+                logger.info(f"Converting the file {curr_file.name} "
+                            f"in parquet format.")
+                curr_file_df = pd.read_csv(curr_file)
+                file_name = curr_file.name.replace(curr_file.suffix,
+                                                   ".pqt")
+                curr_file_df.to_parquet(PROCESSED_DATA_DIR / file_name,
+                                        engine='pyarrow')
 
     logger.success("Processing dataset complete.")
 
