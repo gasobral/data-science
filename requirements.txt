@@ -2,7 +2,7 @@ dotenv
 loguru
 mkdocs
 pip
-python-dotenv
 ruff
 tqdm
 typer
+streamlit >= 1.9.2
