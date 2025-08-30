@@ -6,3 +6,4 @@ ruff
 tqdm
 typer
 streamlit >= 1.9.2
+plotly.express
