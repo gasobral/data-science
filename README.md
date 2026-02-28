@@ -3,18 +3,20 @@
 [![ru](https://img.shields.io/badge/lang-ru-yellow.svg)](https://github.com/gasobral/data-science/blob/main/README.ru.md)
 
 # About the autor
-I am a computer scientist with experience in academics and in tech
-industry. As support analyst, I worked for two banks companies. My
-exprience with data comes from generating reports and indicators of a
-regarding a reward system, data migration, lecturing, personal and
-freelancer projects. In order to keep developing my data skills, I
-read books and create projects.
+I am a computer scientist with experience in predictive modeling,
+exploratory data analysis, and data engineering. I hold a Ph.D. in
+Computer Science and currently work at Cielo, developing a clustering
+models to assess clients’ digital maturity using Databricks, SQL,
+PySpark, and Python. I have built machine learning projects involving
+time series forecasting and ELT pipelines with DBT and Snowflake. I
+have also taught programming, databases, data science, and maintain
+personal projects focused on data analysis and visualization.
 
 **Background**: Python | SQL | Machine Learning
 
 **Links**:
-- my profile at [Linkedin](https://www.linkedin.com/in/gabriel-sobral-99870846/) and [Kaggle](https://www.kaggle.com/gasobral)
-- my [class notes](https://github.com/gasobral/notas-de-aula) about *Data Science* and *programming* in *Python* (only in Brazilian Portuguese)
+- my profile at [Linkedin](https://www.linkedin.com/in/gabriel-sobral-99870846/) and [Kaggle](https://www.kaggle.com/gasobral);
+- my [class notes](https://github.com/gasobral/notas-de-aula) about *Data Science* and *programming* in *Python*.
 
 # Repository Description
 A collection of projects created in order to develop data science

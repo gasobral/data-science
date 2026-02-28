@@ -1,0 +1,23 @@
+---
+page:
+    title: Segmentação de clientes
+    layout: wide
+    sidebar:
+        title: Navegação
+        radio:
+            label: Ir para
+            options:
+                - Home
+                - Exploração
+                - Segmentação
+                - Dashboard
+                - Conclusões
+    home:
+        title: Segmentação de Clientes
+        text: >
+            Bem-vindo! Este app mostra como diferentes grupos de
+            clientes podem ser segmentados a partir dos dados do
+            e-commer da Olist.
+        info: Use o menu à esquerda para navegar.
+    data:
+        title: Análse Exploratória dos Dados

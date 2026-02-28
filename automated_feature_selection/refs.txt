@@ -1,0 +1,36 @@
+https://feature-engine.trainindata.com/en/1.8.x/user_guide/selection/MRMR.html
+
+https://en.wikipedia.org/wiki/Minimum_redundancy_feature_selection
+
+https://sci2s.ugr.es/sites/default/files/bbvasoftware/publications/2096_int21833.pdf
+
+https://www.kaggle.com/code/residentmario/automated-feature-selection-with-sklearn
+
+https://medium.com/@madhu.napa1999/automated-feature-selection-for-machine-learning-in-python-with-scikit-learn-61a0abc837c9
+
+https://amueller.github.io/aml/05-advanced-topics/12-feature-selection.html
+
+
+(Texto gerado por IA ao procurar automated_feature_selection no google)
+Automated feature selection
+uses algorithms to identify and select the most relevant features (variables) from a dataset for building a machine learning model. This process is crucial for improving model performance, reducing computational costs, preventing overfitting, and enhancing model interpretability. 
+Methods for Automated Feature Selection
+Automated feature selection techniques are generally categorized into three main approaches:
+
+    Filter Methods: These methods rank features based on statistical measures (like correlation or chi-squared tests) and select the top-ranked ones, independent of any machine learning model. They are computationally efficient and good for high-dimensional datasets.
+        Examples: SelectKBest (using statistical tests like ANOVA F-value or mutual information), Pearson's correlation coefficient, and Minimum Redundancy Maximum Relevance (MRMR).
+    Wrapper Methods: These methods treat feature selection as a search problem, evaluating different subsets of features by training an actual machine learning model and using its performance (e.g., accuracy) as the evaluation criterion. They are computationally intensive but often yield better performance.
+        Examples: Forward selection, backward elimination, Recursive Feature Elimination (RFE), and evolutionary algorithms (like genetic algorithms).
+    Embedded Methods: These methods perform feature selection as part of the model training process itself, balancing the simplicity of filter methods and the effectiveness of wrapper methods.
+        Examples: LASSO regression (L1 regularization), which penalizes feature coefficients and sets some to zero, and tree-based models (like Random Forests or XGBoost) that provide built-in feature importance scores. 
+
+Tools and Libraries
+Several Python libraries and platforms offer automated feature selection capabilities: 
+
+    scikit-learn: Provides versatile tools like SelectKBest, RFE, and SequentialFeatureSelector. More information is available in the Scikit-learn documentation.
+    AutoFeatSelect: A specialized Python library to automate various methods, including correlation analysis and feature importance using models like LightGBM and XGBoost.
+    Featurewiz: An open-source package designed to automatically select and create important features using the SULOV (Searching for Uncorrelated List of Variables) algorithm and Recursive XGBoost.
+    PyCaret: An automated machine learning library that includes feature selection as part of its automated feature engineering workflow. 
+
+Modern Approaches
+Recent research explores more advanced techniques, such as using multi-agent reinforcement learning (MARL) frameworks, where each feature is treated as an agent making selection decisions to maximize a collective reward (like predictive accuracy, relevance, and minimal redundancy)

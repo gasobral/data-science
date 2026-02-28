@@ -8,7 +8,6 @@ load_dotenv()
 
 ## Paths
 PROJ_ROOT = Path(__file__).resolve().parents[1]
-logger.info(f"PROJ_ROOT path is: {PROJ_ROOT}")
 
 DATA_DIR = PROJ_ROOT / "data"
 RAW_DATA_DIR = DATA_DIR / "raw"
@@ -23,6 +22,11 @@ FIGURES_DIR = REPORTS_DIR / "figures"
 
 SQL_DIR = PROJ_ROOT / "sql"
 
+PROJ_DIR = PROJ_ROOT / "client_segmentation"
+
+## Set up file for streamlit configuration file
+ST_CONFIG_FILE = PROJ_DIR / "st_config.yml"
+
 ## Set up the database name
 DATABASE = "ecommerce.db"
 
@@ -33,7 +37,8 @@ SQL_CUSTOMER_BUY_DATA = 'customer_buys_data.sql'
 ## Set up output file names
 ## files below must be under PROCESSED_DATA_DIR
 CUSTOMER_BUY_DATA = 'customer_data.csv'
-## custome data with the labels obtained using a clustering
+
+## customer data with the labels obtained using a clustering
 ## algorithm
 CUSTOMER_WITH_LABELS = 'customer_with_labels.csv'
 

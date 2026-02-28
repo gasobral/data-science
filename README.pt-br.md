@@ -3,13 +3,14 @@
 [![ru](https://img.shields.io/badge/lang-ru-yellow.svg)](https://github.com/gasobral/data-science/blob/main/README.ru.md)
 
 # Sobre o autor
-Sou um cientista da computação com experiência acadêmica e em empresas
-de tecnologia. Como analista de suporte, trabalhei em dois
-bancos. Minha experiência com dados vem da geração de relatórios e
-indicadores de um sistema de recompensas, migração de dados, dando
-aulas e de projetos pessoais e de freelancer. Parar continuar
-desenvolvendo minhas habilidades em dados, leio livros e crio
-projetos.
+Sou cientista da computação com experiência em modelagem preditiva,
+análise exploratória e engenharia de dados. Tenho doutorado em ciência da
+computação e atuo na Cielo com clusterização e classificação da maturidade
+digital de clientes, utilizando Databricks, SQL, PySpark e
+Python. Desenvolvi projetos envolvendo machine learning, séries temporais
+e pipelines ELT com DBT e Snowflake. Lecionei disciplinas de programação,
+banco de dados e ciência de dados, e mantenho projetos pessoais voltados à
+análise e visualização de dados.
 
 **Background**: Python | SQL | Machine Learning
 

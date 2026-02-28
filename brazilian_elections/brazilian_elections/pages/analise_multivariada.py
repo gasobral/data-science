@@ -7,45 +7,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-## user definided modules
-from config import PROCESSED_DATA_DIR
-import dataset as dt
-
 
 ## Functions - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
-def retrieve_processed_files(processed_dir: Path) -> list:
-    """
-Returns a filest with all csv files at processed directory.
-
-Arguments
----------
-processed_dir: Path object which points to processed directory.
-
-Returns
--------
-A list with all csv processed files.
-    """
-    return [csv_file for csv_file in processed_dir.glob("*.pqt")]
-
-
-@st.cache_data
-def get_processed_data(file_path: Path) -> pd.DataFrame:
-    """
-Returns a data frame with the processed data read from a csv file.
-
-Arguments
----------
-file_path: Path object containg a path to csv file.
-
-Returns
--------
-A data frame with the data read from a csv file.
-    """
-
-    processed_data = pd.read_parquet(file_path)
-    return processed_data
-
-
 def avg_vote_per_job_data(processed_data: pd.DataFrame) -> pd.DataFrame:
     """
 Returns a data frame with the votes per state and job.
@@ -164,23 +127,12 @@ Returns
     return elected_analysis
 
 
-## Script - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -#
-URL_PROJECT = 'https://github.com/gasobral/data-science/tree/main/brazilian_elections'
-URL_NOTEBOOK = 'https://github.com/gasobral/data-science/blob/main/brazilian_elections/notebooks/data_analysis.ipynb'
+## Creates the page - - - - - - - - - - - - - - - - - - - - - - - - - -#
+st.title("Análise multivariada")
 
-## find all csv files at processed data directory
-processed_files = retrieve_processed_files(PROCESSED_DATA_DIR)
-
-## if a file was found, then generate the data for the plots
-if len(processed_files) != 0:
-    processed_data = get_processed_data(processed_files[0])
-
-    st.title("Brazlian electoral data analysis")
-    st.markdown(f"In [Brazilian electoral project]({URL_PROJECT}), we"
-                f" analised electoral data from 2022 and provided some"
-                f" data insights. For in depth discussion, please "
-                f" this [notebook]({URL_NOTEBOOK}). Below we provide "
-                f" some interative graphs regardings our analysis.")
+## check if the dataset was loaded
+if st.session_state["dataset"] is not None:
+    processed_data = st.session_state["dataset"]
 
     ## generates the data for the plots
     ## plot - average candidate votes per job and state
@@ -190,7 +142,7 @@ if len(processed_files) != 0:
                  x='uf',
                  y='candidate_vote_count',
                  color='job')
-
+    
     ## plot - sum of candidate votes per job and state
     vote_per_job = sum_vote_per_job_data(processed_data)
     st.subheader("Sum of candidate votes per job and state.")
@@ -198,11 +150,11 @@ if len(processed_files) != 0:
                  x='uf',
                  y='candidate_vote_count',
                  color='job')
-
+    
     ## plot - histogram of candidate votes, given job and state
     st.subheader("Histogram of candidate votes for job and state.")
     col1, col2 = st.columns(2)
-
+    
     with col1:
         jobs = processed_data['job'].unique()
         job_selection = st.selectbox(
@@ -210,7 +162,7 @@ if len(processed_files) != 0:
             options=jobs,
             index=0
         )
-
+    
     with col2:
         states = processed_data['uf'].unique()
         state_selection = st.selectbox(
@@ -218,27 +170,27 @@ if len(processed_files) != 0:
             options=states,
             index=0
         )
-
+    
     candidate_vote_histogram = get_candidate_vote_data(processed_data,
                                                        state_selection,
                                                        job_selection)
     fig = px.histogram(candidate_vote_histogram)
     st.plotly_chart(fig)
-
-
+    
+    
     ## plot the number of elected mayors and councilors
     st.subheader("Number of mayors elected")
     mayor_elected = get_job_elected(processed_data, 'prefeito')
     st.bar_chart(data=mayor_elected,
                  x='main_party',
                  y='amount')
-
+    
     st.subheader("Number of councilors elected")
     councilor_elected = get_job_elected(processed_data, 'vereador')
     st.bar_chart(data=councilor_elected,
                  x='main_party',
                  y='amount')
-
+    
     ## total de votor por partido e job
     sum_vote_party, total_vote_party = get_vote_party(processed_data)
     st.subheader("Sum of candidade votes per job and main party.")
@@ -246,9 +198,12 @@ if len(processed_files) != 0:
                  x='main_party',
                  y='candidate_vote_count',
                  color='job')
-
+    
     st.subheader("Average of candidade votes per job and main party.")
     st.bar_chart(data=total_vote_party,
                  x='main_party',
                  y='candidate_vote_count',
                  color='job')
+
+else:
+    st.warning("No processed dataset was found!")
